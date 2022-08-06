@@ -82,7 +82,7 @@ RSpec.describe "Flights index page" do
     flight_pass7 = FlightPassenger.create!(flight_id: flight_3.id, passenger_id: passenger7.id)
 
     visit "/flights"
-
+    # save_and_open_page
     within "#flight-#{flight_1.id}" do 
       expect(page).to have_content("Bobby")
       click_link "Remove Bobby"
@@ -91,11 +91,4 @@ RSpec.describe "Flights index page" do
   end
 end
 
-#     User Story 2, Remove a Passenger from a Flight
-
-# When I click on that link/button
-# I'm returned to the flights index page
-# And I no longer see that passenger listed under that flight
-
-# (Note: you should not destroy the passenger record entirely)
 
